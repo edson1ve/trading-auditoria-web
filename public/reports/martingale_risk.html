@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reporte de Riesgo Martingala</title>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <style>
+    .report-container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .kpi { background: #0f172a; color: #fff; padding: 16px; border-radius: 12px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid #e2e8f0; text-align: left; }
+    th { background: #f1f5f9; }
+    .section { margin-top: 28px; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; }
+  </style>
+</head>
+<body>
+  <div class="report-container">
+    <h1>Reporte de Riesgo Martingala</h1>
+    <p>Analisis estadistico basado en trading_results.csv. Fecha: 2026-02-20T22:36:50.167073Z</p>
+
+    <div class="section">
+      <h2>Resumen General</h2>
+      <div class="kpi-grid">
+        <div class="kpi">Total trades: <strong>14221</strong></div>
+        <div class="kpi">Win rate: <strong>90.27%</strong></div>
+        <div class="kpi">Profit total: <strong>-666.14</strong></div>
+        <div class="kpi">Stake mediana: <strong>0.3500</strong></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Parametros del Modelo</h2>
+      <ul>
+        <li>Balance inicial: <span class="mono">10000.00</span></li>
+        <li>Payout: <span class="mono">0.09</span></li>
+        <li>Martingala: <span class="mono">x12.0</span></li>
+        <li>Pasos: <span class="mono">4</span></li>
+        <li>Payout empirico (wins): <span class="mono">0.0695</span></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Escenarios por Stake</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Segmento</th><th>Trades</th><th>Win rate</th><th>Stake promedio</th>
+            <th>Stake min</th><th>Stake max</th><th>Profit total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>small</td><td>8224</td><td>90.28%</td><td>0.3500</td><td>0.3500</td><td>0.3500</td><td>-131.15</td></tr><tr><td>medium</td><td>1187</td><td>90.48%</td><td>1.5577</td><td>0.4200</td><td>3.8800</td><td>-37.87</td></tr><tr><td>high</td><td>4810</td><td>90.19%</td><td>63.0776</td><td>3.8900</td><td>5713.7800</td><td>-497.12</td></tr>
+        </tbody>
+      </table>
+      <p>Cuantiles usados: q33=0.3500, q66=3.8800</p>
+    </div>
+
+    <div class="section">
+      <h2>Riesgo de Ruina (Martingala 4 pasos)</h2>
+      <ul>
+        <li>Prob. perder 4 seguidas (ciclo): <strong>0.01%</strong></li>
+        <li>Prob. al menos una racha de 4 en 14221 trades: <strong>72.07%</strong></li>
+        <li>Stake actual: <strong>18.7800</strong></li>
+        <li>Bankroll requerido con stake actual: <strong>35400.30</strong></li>
+        <li>Stake max recomendado: <strong>5.3050</strong></li>
+        <li>Stake max conservador (80%): <strong>4.2440</strong></li>
+      </ul>
+
+      <h3>Ganancia neta si gana en el paso k (stake conservador)</h3>
+      <table>
+        <thead>
+          <tr><th>Paso</th><th>Neto (USD)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>0.38</td></tr><tr><td>2</td><td>0.34</td></tr><tr><td>3</td><td>-0.17</td></tr><tr><td>4</td><td>-6.28</td></tr>
+        </tbody>
+      </table>
+      <p class="mono">Nota: con payout bajo, los pasos altos pueden ser neto negativo.</p>
+    </div>
+
+    <div class="section">
+      <h2>Conclusiones</h2>
+      <ul>
+        <li>Se recomienda ajustar stake para cubrir 4 pasos con margen.</li>
+        <li>La probabilidad de 4 perdidas seguidas depende de la tasa de acierto real.</li>
+        <li>Para martingala x12.0 con payout 0.09, verificar que el neto sea positivo en cada paso.</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

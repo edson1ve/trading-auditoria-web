@@ -1,0 +1,15 @@
+{
+  "balance_start": 10000.0,
+  "baseline_final": 9338.75,
+  "baseline_pnl": -661.25,
+  "cap_rate": 0.02,
+  "cap_final": 10537.4,
+  "cap_pnl": 537.4,
+  "trades_total": 14224,
+  "trades_executed": 8615,
+  "trades_skipped": 5609,
+  "skipped_profit": -1198.65,
+  "active_days": 12,
+  "hit_days": 9,
+  "generated_at": "2026-02-20T22:40:00Z"
+}

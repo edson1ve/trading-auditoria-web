@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resumen Ejecutivo de Riesgo</title>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <style>
+    .report-container { max-width: 900px; margin: 0 auto; padding: 36px 20px; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .kpi { background: #0f172a; color: #fff; padding: 12px; border-radius: 10px; }
+    .section { margin-top: 24px; }
+    .note { background: #fff7ed; border: 1px solid #fed7aa; padding: 12px; border-radius: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { padding: 8px 10px; border-bottom: 1px solid #e2e8f0; text-align: left; }
+    th { background: #f1f5f9; }
+  </style>
+</head>
+<body>
+  <div class="report-container">
+    <h1>Resumen Ejecutivo de Riesgo</h1>
+    <p>Documento de lectura rapida para inversionistas. Fecha: 2026-02-20</p>
+
+    <div class="section">
+      <h2>KPIs del Estudio</h2>
+      <div class="kpi-grid">
+        <div class="kpi">Total trades: <strong>14,221</strong></div>
+        <div class="kpi">Win rate: <strong>90.27%</strong></div>
+        <div class="kpi">Profit total: <strong>-666.14</strong></div>
+        <div class="kpi">Max loss streak: <strong>4</strong></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Riesgo de Ruina</h2>
+      <ul>
+        <li>P(4 perdidas seguidas): <strong>0.01%</strong></li>
+        <li>P(al menos una racha de 4 en 14,221 trades): <strong>72.07%</strong></li>
+      </ul>
+      <div class="note">
+        Con payout 9% y x12, los pasos 3-4 son neto negativo. Se recomienda limitar la martingala o ajustar payout/multiplicador.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Limites Operativos</h2>
+      <ul>
+        <li>Stake recomendado: <strong>0.05%</strong> del balance</li>
+        <li>Meta diaria: <strong>5%</strong> del balance</li>
+        <li>Validador rolling 24h: no operar si meta alcanzada</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Simulacion con Tope Diario 2%</h2>
+      <table>
+        <thead>
+          <tr><th>Escenario</th><th>Balance final</th><th>P&L</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Baseline</td><td>9,338.75</td><td>-661.25</td></tr>
+          <tr><td>Con tope 2%</td><td>10,537.40</td><td>+537.40</td></tr>
+        </tbody>
+      </table>
+      <p>Se omitieron 5,609 trades que habrian aportado -1,198.65.</p>
+    </div>
+
+    <div class="section">
+      <h2>Recomendacion</h2>
+      <ol>
+        <li>Operar solo en sesiones cortas y con objetivo diario.</li>
+        <li>Aplicar stake bajo (0.05%) para reducir drawdown.</li>
+        <li>Detener la operativa al alcanzar la meta diaria.</li>
+        <li>Evitar martingala 4 pasos con payout menor al 10%.</li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <h2>Disclosure</h2>
+      <p>Este documento es informativo y no constituye asesoramiento financiero.</p>
+    </div>
+  </div>
+</body>
+</html>

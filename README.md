@@ -6,6 +6,11 @@ transparencia total, trazabilidad y reportes faciles de interpretar para cliente
 **Sitio en produccion:** https://auditoria.criptoinversiones.net/  
 **Modulo de reportes:** https://auditoria.criptoinversiones.net/reports
 
+## 📘 Reportes de riesgo (publicos)
+
+- **Reporte integral:** https://auditoria.criptoinversiones.net/reports/risk_report.html
+- **Modelo martingala:** https://auditoria.criptoinversiones.net/reports/martingale_risk.html
+
 ## ✅ Que ofrece el sitio
 
 - **Auditoria publica** con operaciones verificables.
@@ -107,6 +112,12 @@ NODE_ENV=production
 
 - **Publica:** `EXPORT_TO_GITHUB=true` publica datos en GitHub.
 - **Privada:** `EXPORT_TO_GITHUB=false` conserva datos locales.
+
+## 🔐 Politica de publicacion
+
+- Este repositorio publica solo **auditorias** y **analisis**.
+- El bot de trading y el bot de Telegram son **privados**.
+- El servicio se ofrece via API bajo las condiciones de Deriv.
 
 ## 📞 Soporte
 

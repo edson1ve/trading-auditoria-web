@@ -1,0 +1,91 @@
+{
+  "summary": {
+    "total_trades": 14221,
+    "wins": 12837,
+    "losses": 1384,
+    "win_rate": 0.902679136488292,
+    "profit_sum": -666.1399999999996,
+    "avg_profit": -0.04684199423387945,
+    "stake_min": 0.35,
+    "stake_max": 5713.78,
+    "stake_median": 0.35,
+    "stake_q33": 0.35,
+    "stake_q66": 3.88,
+    "payout_empirical": 0.0695173590591392
+  },
+  "inputs": {
+    "balance": 10000.0,
+    "payout": 0.09,
+    "multiplier": 12.0,
+    "steps": 4
+  },
+  "stakes_bins": {
+    "small": {
+      "count": 8224,
+      "win_rate": 0.9028453307392996,
+      "avg_stake": 0.35,
+      "profit_sum": -131.14999999999998,
+      "avg_profit": -0.015947227626459143,
+      "avg_loss": -0.35,
+      "stake_min": 0.35,
+      "stake_max": 0.35
+    },
+    "medium": {
+      "count": 1187,
+      "win_rate": 0.9048020219039595,
+      "avg_stake": 1.5577253580454928,
+      "profit_sum": -37.86999999999999,
+      "avg_profit": -0.0319039595619208,
+      "avg_loss": -1.586637168141593,
+      "stake_min": 0.42,
+      "stake_max": 3.88
+    },
+    "high": {
+      "count": 4810,
+      "win_rate": 0.9018711018711019,
+      "avg_stake": 63.077609147609145,
+      "profit_sum": -497.1199999999996,
+      "avg_profit": -0.10335135135135128,
+      "avg_loss": -52.859957627118646,
+      "stake_min": 3.89,
+      "stake_max": 5713.78
+    }
+  },
+  "loss_streaks": {
+    "max_loss_streak": 4,
+    "streak_counts": {
+      "1": 1124,
+      "2": 113,
+      "3": 10,
+      "4": 1
+    }
+  },
+  "ruin": {
+    "q_loss": 0.09732086351170799,
+    "prob_ruin_cycle": 8.970647981392736e-05,
+    "prob_ruin_over_trades": 0.7207098131175635,
+    "bankroll_needed_current_stake": 35400.3,
+    "stake_current": 18.78,
+    "stake_max": 5.305039787798409,
+    "stake_max_safe": 4.244031830238727,
+    "net_profit_by_step": [
+      {
+        "step": 1,
+        "net_profit": 0.38196286472148544
+      },
+      {
+        "step": 2,
+        "net_profit": 0.33952254641909807
+      },
+      {
+        "step": 3,
+        "net_profit": -0.16976127320955214
+      },
+      {
+        "step": 4,
+        "net_profit": -6.28116710875338
+      }
+    ]
+  },
+  "generated_at": "2026-02-20T22:36:50.167073Z"
+}
