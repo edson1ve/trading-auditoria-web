@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportes de Auditoria - Aegis Neural Quant</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <h1>🤖 Aegis Neural Quant</h1>
+        <p class="subtitle">Modulo de Reportes de Auditoria</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro-section">
+        <h2>Transparencia Total en Tiempo Real</h2>
+        <p>
+          Este modulo contiene la auditoria publica de todas las operaciones del sistema de trading automatico.
+          Cada operacion esta registrada, verificable y completamente transparente.
+        </p>
+      </section>
+
+      <section class="accounts-section">
+        <h2>📊 Selecciona una Cuenta</h2>
+        <div id="accounts-list" class="accounts-grid">
+          <div class="loading">Cargando cuentas disponibles...</div>
+        </div>
+      </section>
+
+      <section id="account-detail" class="account-detail hidden">
+        <div class="account-header">
+          <button id="back-button" class="back-button">← Volver</button>
+          <h2 id="account-title"></h2>
+        </div>
+
+        <div class="account-summary">
+          <div class="summary-card">
+            <h3>📈 Resumen General</h3>
+            <table>
+              <tr>
+                <td>Total Operaciones:</td>
+                <td id="summary-total-trades">-</td>
+              </tr>
+              <tr>
+                <td>Ganancias:</td>
+                <td id="summary-wins">-</td>
+              </tr>
+              <tr>
+                <td>Perdidas:</td>
+                <td id="summary-losses">-</td>
+              </tr>
+              <tr>
+                <td>Win Rate:</td>
+                <td id="summary-win-rate">-</td>
+              </tr>
+              <tr>
+                <td>Profit Total:</td>
+                <td id="summary-profit">-</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="summary-card">
+            <h3>💰 Balance Historico</h3>
+            <div id="balance-chart" style="height: 300px; width: 100%;"></div>
+          </div>
+        </div>
+
+        <div class="operations-section">
+          <h3>📋 Operaciones Recientes</h3>
+          <div id="operations-table" class="operations-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Timestamp</th>
+                  <th>Tipo</th>
+                  <th>Stake</th>
+                  <th>Resultado</th>
+                  <th>Profit</th>
+                  <th>Duracion (Ticks)</th>
+                </tr>
+              </thead>
+              <tbody id="operations-body">
+                <tr><td colspan="7" class="loading">Cargando operaciones...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        <strong>Aegis Neural Quant</strong> | Sistema de Trading Automatizado<br>
+        Desarrollado para maxima transparencia y auditoria publica<br>
+        <small>Ultima actualizacion: <span id="footer-timestamp">-</span></small>
+      </p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

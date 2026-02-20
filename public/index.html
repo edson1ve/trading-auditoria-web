@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auditoria Publica - Aegis Neural Quant</title>
+  <meta name="description" content="Auditoria publica del sistema Aegis Neural Quant. Consulta reportes, metricas y transparencia operativa en tiempo real.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0b0e14;
+      --ink-2: #222a38;
+      --paper: #f6f2ed;
+      --accent: #ff7a2f;
+      --accent-2: #2c7be5;
+      --glow: rgba(255, 122, 47, 0.25);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", "Segoe UI", Tahoma, sans-serif;
+      color: var(--ink);
+      background: radial-gradient(1200px 800px at 10% -10%, #ffe1cc 0%, transparent 60%),
+                  radial-gradient(900px 700px at 90% 10%, #d7e7ff 0%, transparent 55%),
+                  var(--paper);
+      min-height: 100vh;
+    }
+    .shell {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+    .brand {
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--ink-2);
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 56px;
+    }
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(32px, 4.2vw, 54px);
+      margin: 0 0 16px;
+    }
+    .hero p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 0 0 24px;
+      color: var(--ink-2);
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 10px 30px var(--glow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 35px var(--glow);
+    }
+    .hero-card {
+      background: #ffffffcc;
+      border-radius: 24px;
+      padding: 24px;
+      border: 1px solid #ffffff;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(6px);
+    }
+    .hero-card h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      color: var(--ink-2);
+    }
+    .hero-card ul {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.7;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 20px;
+      border: 1px solid #e9e2dc;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+    }
+    .card h4 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: var(--ink-2);
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+    .step {
+      padding: 16px;
+      border-radius: 16px;
+      background: #ffffffb8;
+      border: 1px dashed #d9cfc5;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #5b6473;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #fff0e6;
+      color: #8f3e10;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero, .grid, .steps { animation: floatIn 0.9s ease both; }
+    @media (max-width: 720px) {
+      header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div>
+        <div class="brand">Aegis Neural Quant</div>
+        <div class="tag">Auditoria publica certificada</div>
+        <h1>Transparencia real para un sistema de trading automatizado.</h1>
+        <p>
+          La auditoria publica registra cada operacion ejecutada por el bot y la convierte en reportes
+          verificables. Sin promesas vagas: datos claros, metricas auditables y trazabilidad total.
+        </p>
+        <a class="cta" href="/reports">Abrir modulo de reportes →</a>
+      </div>
+      <div class="hero-card">
+        <h3>Que encontraras en los reportes</h3>
+        <ul>
+          <li>Resumen de resultados por cuenta.</li>
+          <li>Balance historico diario.</li>
+          <li>Operaciones recientes con detalle.</li>
+          <li>Metadatos de auditoria y ultima actualizacion.</li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h2>Metodo de auditoria</h2>
+        <p>
+          El bot genera reportes locales al finalizar cada sesion. Un exportador convierte los datos
+          en JSON estandar y los publica en el repositorio de auditoria. Hostinger despliega cada
+          actualizacion para mantener la informacion visible y consistente.
+        </p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h4>1. Captura</h4>
+          <p>Se registran operaciones, balance y eventos claves del bot.</p>
+        </div>
+        <div class="card">
+          <h4>2. Normalizacion</h4>
+          <p>Los datos se convierten en JSON con estructura auditada.</p>
+        </div>
+        <div class="card">
+          <h4>3. Publicacion</h4>
+          <p>Se sincroniza a GitHub y Hostinger despliega automaticamente.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Metricas disponibles</h2>
+      <div class="steps">
+        <div class="step"><strong>Total de operaciones:</strong> cantidad total de trades registrados.</div>
+        <div class="step"><strong>Ganancias / Perdidas:</strong> conteo de operaciones WIN y LOSE.</div>
+        <div class="step"><strong>Win rate:</strong> porcentaje de operaciones ganadoras respecto al total.</div>
+        <div class="step"><strong>Profit total:</strong> suma neta de ganancias menos perdidas.</div>
+        <div class="step"><strong>Balance historico:</strong> evolucion diaria del capital en la cuenta.</div>
+        <div class="step"><strong>Duracion (ticks):</strong> tiempo operativo por transaccion.</div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Auditoria publica en Hostinger: https://auditoria.criptoinversiones.net/ | Reportes: /reports</p>
+      <p>Desarrollado por Edson Solorzano · Aegis Neural Quant © 2026</p>
+    </footer>
+  </div>
+</body>
+</html>

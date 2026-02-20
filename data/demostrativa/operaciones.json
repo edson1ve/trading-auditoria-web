@@ -1,0 +1,11 @@
+{
+  "account_id": "DEMOSTRATIVA",
+  "resumen": {
+    "total_operaciones": 0,
+    "ganancias": 0,
+    "perdidas": 0,
+    "win_rate": 0.0,
+    "profit_total": 0.0
+  },
+  "operaciones": []
+}
